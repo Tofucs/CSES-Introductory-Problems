@@ -2,17 +2,18 @@
 #include <string>
 
 int n;
+long long int zero = 0;
 
-int solve(const int &n){
-  int steps = 0;
-  int x[n];
+long long int solve(const int &n){
+  long long int steps = 0;
+  long long int x[n];
   for (int i = 0; i < n; i++) {
     std::cin >> x[i];
   }
   
   for (int i = 1; i < n; i++) {
-    steps += std::max(0, x[i-1] - x[i]);
-    x[i] += std::max(0, x[i-1] - x[i]);
+    steps += std::max(zero, x[i-1] - x[i]);
+    x[i] += std::max(zero, x[i-1] - x[i]);
   }
   return steps;
 }
